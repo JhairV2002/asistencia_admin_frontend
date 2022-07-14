@@ -8,7 +8,12 @@ import { DiaFestivoComponent } from './diaFestivo/diaFestivo.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent, DiaFestivoComponent, CategoriaComponent],
+  declarations: [
+    AppComponent,
+    DiaFestivoComponent,
+    CategoriaComponent,
+    RolesComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
