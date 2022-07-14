@@ -105,11 +105,7 @@
       }
     }
   },
-<<<<<<< HEAD
   "cli": {
     "analytics": false
   }
-=======
-  "defaultProject": "seguridad-frontend"
->>>>>>> actividades
 }

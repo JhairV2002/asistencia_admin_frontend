@@ -5,9 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-<<<<<<< HEAD
-  title = 'Seguridad';
-=======
   title = 'Asistencia';
->>>>>>> actividades
 }
