@@ -1,11 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "49e3c6b6-0ee6-43dc-8833-ab0ef1b6e6a0"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "asistencia_admin_frontend": {
+    "seguridad-frontend": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/asistencia_admin_frontend",
+            "outputPath": "dist/seguridad-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "asistencia_admin_frontend:build:production"
+              "browserTarget": "seguridad-frontend:build:production"
             },
             "development": {
-              "browserTarget": "asistencia_admin_frontend:build:development"
+              "browserTarget": "seguridad-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "asistencia_admin_frontend:build"
+            "browserTarget": "seguridad-frontend:build"
           }
         },
         "test": {
@@ -98,7 +105,11 @@
       }
     }
   },
+<<<<<<< HEAD
   "cli": {
     "analytics": false
   }
+=======
+  "defaultProject": "seguridad-frontend"
+>>>>>>> actividades
 }

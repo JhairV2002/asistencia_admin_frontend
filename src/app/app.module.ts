@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RolesComponent } from './roles/roles.component';
 import { DiaFestivoComponent } from './diaFestivo/diaFestivo.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ActividadComponent } from './actividad/actividad.component';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     DiaFestivoComponent,
     CategoriaComponent,
     RolesComponent,
+    ActividadComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
