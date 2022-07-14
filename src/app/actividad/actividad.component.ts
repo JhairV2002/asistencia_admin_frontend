@@ -14,13 +14,14 @@ export class ActividadComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { }
 
-  currentEntity: Actividad = 
+  currentEntity: Actividad =
   {
     actividadId: 0,
     nombre: "",
-    categorias: "",
+    categoria: "",
     created: new Date(),
-    archived:false,
+    updated: new Date(),
+    archivate:false,
     enabled: true
   };
 
@@ -39,13 +40,14 @@ export class ActividadComponent implements OnInit {
     this.actividadService.save(this.currentEntity)
     .subscribe(
       () => {
-        this.currentEntity = 
+        this.currentEntity =
         {
           actividadId: 0,
           nombre: "",
-          categorias: "",
+          categoria: "",
           created: new Date(),
-          archived:false,
+          updated: new Date(),
+          archivate:false,
           enabled: true
         };
       }

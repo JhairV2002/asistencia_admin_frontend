@@ -1,8 +1,9 @@
 export interface Actividad {
     actividadId: number,
     nombre: string,
-    categorias: string,
+    categoria: string,
     created: Date,
-    archived:boolean,
+    updated: Date,
+    archivate:boolean,
     enabled: boolean
 }
