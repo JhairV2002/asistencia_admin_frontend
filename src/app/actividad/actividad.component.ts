@@ -20,6 +20,7 @@ export class ActividadComponent implements OnInit {
     nombre: "",
     categorias: "",
     created: new Date(),
+    archived:false,
     enabled: true
   };
 
@@ -44,6 +45,7 @@ export class ActividadComponent implements OnInit {
           nombre: "",
           categorias: "",
           created: new Date(),
+          archived:false,
           enabled: true
         };
       }

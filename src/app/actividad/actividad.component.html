@@ -34,6 +34,12 @@
       <div class="card-title">Precaución</div>
       <p>Si elimina el registro no prodrá recuperarlo</p>
       <div class="card-actions">
+        <div class="form-control">
+          <label class="label cursor-pointer justify-start">
+            <input type="checkbox" class="toggle toggle-primary" [(ngModel)]="currentEntity.archived" />
+            <span class="label-text ml-2">Achivate</span>
+          </label>
+        </div>
         <label for="my-modal-6" class="btn modal-button btn-secondary btn-xs">Eliminar</label>
 
         <!-- Put this part before </body> tag -->

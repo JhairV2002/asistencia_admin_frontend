@@ -3,5 +3,6 @@ export interface Actividad {
     nombre: string,
     categorias: string,
     created: Date,
+    archived:boolean,
     enabled: boolean
 }
