@@ -30,4 +30,11 @@ export class CategoriaService {
     return this.http.delete<Categoria>(this.url+"/deleteById/"+id, this.httpOptions);
   }
 
+  public findAll():Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+  public findByNombre(term: String): Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(this.url+"/findByNombre/"+term, this.httpOptions)
+  }
 }

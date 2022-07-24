@@ -4,12 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
-    AppComponent,
-    CategoriaComponent
+    AppComponent  
   ],
   imports: [
     BrowserModule,
