@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Categoria } from './categoria';
-import { CategoriaService } from './categoria.service';
+import { Categoria } from '../categoria';
+import { CategoriaService } from '../categoria.service';
 
 @Component({
-  selector: 'app-categoria',
-  templateUrl: './categoria.component.html'
+  selector: 'app-categoria-form',
+  templateUrl: './categoria.form.component.html'
 })
-export class CategoriaComponent implements OnInit {
+export class CategoriaFormComponent implements OnInit {
 
   constructor(
     private CategoriaService: CategoriaService,

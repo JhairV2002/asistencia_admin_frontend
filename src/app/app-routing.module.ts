@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RolesComponent } from './roles/roles.component';
 import { DiaFestivoFormComponent } from './feature/diaFestivo/form/diaFestivo.form.component';
-import { CategoriaComponent } from './categoria/categoria.component';
+import { CategoriaFormComponent } from './feature/categoria/form/categoria.form.component';
 import { ActividadComponent } from './actividad/actividad.component';
 
 const routes: Routes = [
@@ -10,11 +10,22 @@ const routes: Routes = [
   { path: 'roles/:id', component: RolesComponent },
   { path: 'diaFestivo', component: DiaFestivoFormComponent },
   { path: 'diaFestivo/:id', component: DiaFestivoFormComponent },
-  { path: 'categoria', component: CategoriaComponent },
-  { path: 'categoria/:id', component: CategoriaComponent },
+  { path: 'categoria', component: CategoriaFormComponent },
+  { path: 'categoria/:id', component: CategoriaFormComponent },
   { path: 'actividad', component: ActividadComponent },
   { path: 'actividad/:id', component: ActividadComponent },
   { path: '', redirectTo: '/layout', pathMatch: 'full' },
+  {
+    path: 'layout',
+    loadChildren: () =>
+      import('./layout/layout.module').then((m) => m.LayoutModule),
+  },
+  {
+    path: 'feature',
+    loadChildren: () =>
+      import('./feature/feature.module').then((m) => m.FeatureModule),
+  },
+
   {
     path: 'layout',
     loadChildren: () =>
