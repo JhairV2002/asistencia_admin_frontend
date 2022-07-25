@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { DiaFestivo } from './diaFestivo';
-import { DiaFestivoService } from './diaFestivo.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DiaFestivo } from '../diaFestivo';
+import { DiaFestivoService } from '../diaFestivo.service';
 
 @Component({
-  selector: 'app-diaFestivo',
-  templateUrl: './diaFestivo.component.html'
+  selector: 'app-diaFestivo-form',
+  templateUrl: './diaFestivo.form.component.html'
 })
-export class DiaFestivoComponent implements OnInit {
+export class DiaFestivoFormComponent implements OnInit {
 
   constructor(
     private diaFestivoService: DiaFestivoService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router:Router
   ) { }
 
   currentEntity: DiaFestivo =
@@ -50,6 +51,7 @@ export class DiaFestivoComponent implements OnInit {
           archived: false,
           enabled: true
         };
+        this.router.navigate(['/layout/diaFestivo-list']);
       }
     )
   }
