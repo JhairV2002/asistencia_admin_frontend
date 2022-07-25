@@ -13,7 +13,10 @@ const routes: Routes = [
   { path: 'categoria', component: CategoriaComponent },
   { path: 'categoria/:id', component: CategoriaComponent },
   { path: 'actividad', component:ActividadComponent},
-  { path: 'actividad/:id', component:ActividadComponent}
+  { path: 'actividad/:id', component:ActividadComponent},
+  {path: '', redirectTo: '/layout', pathMatch: 'full'},
+  {path: 'layout', loadChildren:() => import('./layout/layout.module').then(m => m.LayoutModule)},
+  {path: 'feature', loadChildren:() => import('./feature/feature.module').then(m => m.FeatureModule)}
 ];
 
 @NgModule({

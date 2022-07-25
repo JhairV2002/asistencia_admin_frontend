@@ -30,4 +30,12 @@ export class DiaFestivoService {
     return this.http.post<DiaFestivo>(this.url+"/update/"+id, this.httpOptions);
   }
 
+  public findAll(): Observable<DiaFestivo[]>{
+    return this.http.get<DiaFestivo[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+  public findByName(term: string): Observable<DiaFestivo[]>{
+    return this.http.get<DiaFestivo[]>(this.url+"/findByName/"+term, this.httpOptions)
+  }
+
 }
