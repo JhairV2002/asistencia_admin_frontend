@@ -9,6 +9,9 @@ import { CategoriaFormComponent } from './categoria/form/categoria.form.componen
 import { FormsModule } from '@angular/forms';
 import { CategoriaListComponent } from './categoria/list/categoria-list.component';
 import { CategoriaToolbarComponent } from './categoria/toolbar/categoria-toolbar.component';
+import { RolesComponent } from './roles/roles-form/roles.component';
+import { RolesListComponent } from './roles/roles-list/roles-list.component';
+import { ToolbarRolesComponent } from './roles/toolbar-roles/toolbar-roles.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { CategoriaToolbarComponent } from './categoria/toolbar/categoria-toolbar
     CategoriaFormComponent,
     CategoriaListComponent,
     CategoriaToolbarComponent,
+    RolesComponent,
+    RolesListComponent,
+    ToolbarRolesComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })
