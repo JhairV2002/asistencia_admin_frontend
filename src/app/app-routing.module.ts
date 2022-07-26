@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RolesComponent } from './roles/roles.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/layout', pathMatch: 'full' },
   {
-    path: 'roles',
-    component: RolesComponent,
+    path: 'layout',
+    loadChildren: () =>
+      import('./layout/layout.module').then((m) => m.LayoutModule),
   },
   {
-    path: 'roles/:id',
-    component: RolesComponent,
+    path: 'feature',
+    loadChildren: () =>
+      import('./feature/feature.module').then((m) => m.FeatureModule),
   },
 ];
 
