@@ -22,6 +22,20 @@ export class RolesService {
     return this.http.get<Rol>(`${this.url}/${id}`, this.httpOptions);
   }
 
+  /**
+   * findByName
+   */
+  public findByName(term: string): Observable<Rol[]> {
+    return this.http.get<Rol[]>(
+      `${this.url}/findByName/${term}`,
+      this.httpOptions
+    );
+  }
+
+  public findAll(): Observable<Rol[]> {
+    return this.http.get<Rol[]>(`${this.url}/findAll`, this.httpOptions);
+  }
+
   public deleteById(id: number): Observable<Rol> {
     return this.http.delete<Rol>(
       `${this.url}/deleteById/${id}`,

@@ -4,6 +4,8 @@ import { DiaFestivoFormComponent } from '../feature/diaFestivo/form/diaFestivo.f
 import { DiaFestivoListComponent } from '../feature/diaFestivo/list/diaFestivo-list.component';
 import { CategoriaFormComponent } from '../feature/categoria/form/categoria.form.component';
 import { CategoriaListComponent } from '../feature/categoria/list/categoria-list.component';
+import { RolesListComponent } from '../feature/roles/roles-list/roles-list.component';
+import { RolesComponent } from '../feature/roles/roles-form/roles.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 
@@ -28,6 +30,22 @@ const routes: Routes = [
       { path: 'categoria-form/:id', component: CategoriaFormComponent },
       { path: 'categoria-list', component: CategoriaListComponent },
       { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'roles-form',
+        component: RolesComponent,
+      },
+      {
+        path: 'roles-form/:id',
+        component: RolesComponent,
+      },
+      {
+        path: 'roles-list',
+        component: RolesListComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
     ],
   },
 ];

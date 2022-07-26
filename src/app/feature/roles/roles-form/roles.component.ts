@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Rol } from './roles';
-import { RolesService } from './roles.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Rol } from '../roles';
+import { RolesService } from '../roles.service';
 
 @Component({
   selector: 'app-roles',
   templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.css'],
 })
 export class RolesComponent implements OnInit {
   constructor(
     private rolesService: RolesService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   initialForm: Rol = {
-    id: 0,
+    rolId: 0,
     name: '',
     admin: false,
     created: new Date(),
     updated: new Date(),
-    enable: false,
+    enabled: false,
     archived: false,
   };
 
@@ -37,6 +37,7 @@ export class RolesComponent implements OnInit {
   save(): void {
     this.rolesService.save(this.form).subscribe(() => {
       this.form = this.initialForm;
+      this.router.navigate(['/layout/roles-list']);
     });
   }
 
@@ -46,7 +47,7 @@ export class RolesComponent implements OnInit {
     });
   }
   deleteById(): void {
-    this.rolesService.deleteById(this.form.id).subscribe(() => {
+    this.rolesService.deleteById(this.form.rolId).subscribe(() => {
       console.log('Borrado');
     });
   }

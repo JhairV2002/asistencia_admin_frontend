@@ -1,9 +1,9 @@
 export interface Rol {
-  id: number;
+  rolId: number;
   name: string;
   admin: boolean;
   created: Date;
   updated: Date;
-  enable: boolean;
+  enabled: boolean;
   archived: boolean;
 }
