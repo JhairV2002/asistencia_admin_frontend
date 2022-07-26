@@ -11,10 +11,15 @@ export class RolesListComponent implements OnInit {
 
   rolesList: Rol[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.findAll();
+  }
 
   public findAll(): void {
-    this.rolesService.findAll().subscribe((res) => (this.rolesList = res));
+    this.rolesService.findAll().subscribe((res) => {
+      this.rolesList = res;
+      console.log(res);
+    });
   }
 
   /**
