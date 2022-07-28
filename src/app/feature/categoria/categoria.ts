@@ -1,3 +1,4 @@
+import { Actividad } from "../actividad/actividad";
 
 export interface Categoria {
     categoriaActividadId: number,
@@ -7,6 +8,8 @@ export interface Categoria {
     created: Date,
     updated: Date,
     enabled: boolean,
-    archived: boolean
+    archived: boolean,
+    rolId: number,
+    actividades: Actividad[]
 }
 

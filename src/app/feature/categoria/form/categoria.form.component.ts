@@ -1,5 +1,7 @@
+//revisar findById por si no sirve
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
 
@@ -11,7 +13,9 @@ export class CategoriaFormComponent implements OnInit {
 
   constructor(
     private CategoriaService: CategoriaService,
-    private activatedRoute: ActivatedRoute
+    private actividadService : ActividadService,
+    private activatedRoute: ActivatedRoute,
+    private router : Router
   ) { }
 
   currentEntity: Categoria = 
@@ -24,6 +28,8 @@ export class CategoriaFormComponent implements OnInit {
     updated: new Date(),
     enabled: true,
     archived: true,
+    rolId: 0,
+    actividades: [],
   };
 
   ngOnInit(): void {
@@ -50,19 +56,29 @@ export class CategoriaFormComponent implements OnInit {
           created: new Date(),
           updated: new Date(),
           enabled: true,
-          archived: true
+          archived: true,
+          rolId: 0,
+          actividades: [],
         };
+        this.router.navigate(['/layout/categoria-list']);
       }
     )
   }
 
   findById(id: number):void {
-    this.CategoriaService.findById(id).subscribe(
+    this.ActividadService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
-      }
-    )
-  }
+        this.currentEntity.actividades.forEach(
+          (acti) => {
+            this.actividadService.findById(acti.id).subscribe(
+              (item) => acti.nombre = item.nombre
+              )
+            }
+          )
+        }
+      )
+    }
 
   deleteById():void{
     this.CategoriaService.deleteById(this.currentEntity.categoriaActividadId).subscribe(
@@ -73,4 +89,11 @@ export class CategoriaFormComponent implements OnInit {
     )
   }
 
+  removeActividad(id: number){
+    this.currentEntity.actividades = 
+    this.currentEntity.actividades.filter(
+      (item) => {item.id !== id}
+    )
+  }
 }
+

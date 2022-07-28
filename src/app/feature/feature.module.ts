@@ -6,13 +6,15 @@ import { CategoriaFormComponent } from './categoria/form/categoria.form.componen
 import { FormsModule } from '@angular/forms';
 import { CategoriaListComponent } from './categoria/list/categoria-list.component';
 import { CategoriaToolbarComponent } from './categoria/toolbar/categoria-toolbar.component';
+import { CategoriaComboboxComponent } from './categoria/categoria-combobox.component';
 
 
 @NgModule({
   declarations: [
     CategoriaFormComponent,
     CategoriaListComponent,
-    CategoriaToolbarComponent
+    CategoriaToolbarComponent,
+    CategoriaComboboxComponent
   ],
   imports: [
     CommonModule,
