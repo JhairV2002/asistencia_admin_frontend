@@ -6,18 +6,15 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { ActividadToolbarComponent } from '../feature/actividad/toolbar/actividad-toolbar.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MainComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
-  imports: [
-    CommonModule,
-    LayoutRoutingModule
-  ]
+  imports: [CommonModule, LayoutRoutingModule],
 })
-export class LayoutModule { }
+export class LayoutModule {}

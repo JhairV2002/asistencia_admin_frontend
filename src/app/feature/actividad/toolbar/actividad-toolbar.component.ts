@@ -2,20 +2,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-actividad-toolbar',
-  templateUrl: './actividad-toolbar.component.html'
+  templateUrl: './actividad-toolbar.component.html',
 })
 export class ActividadToolbarComponent implements OnInit {
-
-  @Input() entityName: string = "";
+  @Input() entityName: string = '';
   @Output() termEmitter = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  public onInput(term: string){
+  public onInput(term: string) {
     this.termEmitter.emit(term);
   }
-
 }

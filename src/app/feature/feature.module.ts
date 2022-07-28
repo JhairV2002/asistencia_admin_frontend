@@ -7,18 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { ActividadListComponent } from './actividad/list/actividad-list.component';
 import { ActividadToolbarComponent } from './actividad/toolbar/actividad-toolbar.component';
 
-
-
 @NgModule({
   declarations: [
     ActividadFormComponent,
     ActividadListComponent,
-    ActividadToolbarComponent
+    ActividadToolbarComponent,
   ],
-  imports: [
-    CommonModule,
-    FeatureRoutingModule,
-    FormsModule
-  ]
+  imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })
-export class FeatureModule { }
+export class FeatureModule {}
