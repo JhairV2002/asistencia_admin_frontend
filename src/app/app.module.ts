@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ActividadComponent } from './feature/actividad/actividad.component';
+
 import { HttpClientModule } from '@angular/common/http';
+import { ActividadFormComponent } from './feature/actividad/form/actividad.form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ActividadComponent
+    ActividadFormComponent
   ],
   imports: [
     BrowserModule,
