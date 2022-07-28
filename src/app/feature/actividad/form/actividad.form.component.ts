@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Actividad } from './actividad';
-import { ActividadService } from './actividad.service';
-
+import { Actividad } from '../actividad';
+import { ActividadService } from '../actividad.service';
 @Component({
-  selector: 'app-actividad',
-  templateUrl: './actividad.component.html'
+  selector: 'app-actividad-form',
+  templateUrl: './actividad.form.component.html'
 })
-export class ActividadComponent implements OnInit {
+export class ActividadFormComponent implements OnInit {
 
   constructor(
     private actividadService: ActividadService,

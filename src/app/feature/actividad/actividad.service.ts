@@ -29,5 +29,12 @@ export class ActividadService {
   public deleteById(id: number): Observable<Actividad>{
     return this.http.delete<Actividad>(this.url+"/deleteById/"+id, this.httpOptions);
   }
+  public findAll(): Observable<Actividad[]>{
+    return this.http.get<Actividad[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+  public findByName(term: string): Observable<Actividad[]>{
+    return this.http.get<Actividad[]>(this.url+"/findByName/"+term, this.httpOptions)
+  } 
 
 }
