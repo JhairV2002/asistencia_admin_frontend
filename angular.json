@@ -105,5 +105,7 @@
       }
     }
   },
-  "defaultProject": "seguridad-frontend"
+  "cli": {
+    "analytics": false
+  }
 }

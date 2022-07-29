@@ -1,0 +1,9 @@
+<select #selectCity (change)="onSelect(selectCategoria.value)" class="select select-primary" name="" id="">
+    <option value=0 selected disabled>Seleccione</option>
+    <option *ngFor="let categoria of categorias"
+    [value]="categoria.id"
+    [selected]="categoria.id === categoriaId"
+    >
+        {{categoria.nombre}}
+    </option>
+</select

@@ -2,47 +2,44 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Actividad } from '../actividad';
 import { ActividadService } from '../actividad.service';
-import { DiasFestivos} from '../../diasfestivos/diasfestivos';
-import { DiasFestivos } from '../../diasfestivos/diasfestivos.service';
+import { DiaFestivo} from '../../diaFestivo/diaFestivo';
+import { DiaFestivoService } from '../../diaFestivo/diaFestivo.service';
 
 @Component({
   selector: 'app-actividad-form',
-  templateUrl: './actividad.form.component.html'
+  templateUrl: './actividad.form.component.html',
 })
 export class ActividadFormComponent implements OnInit {
-
+  router: any;
+  actividadService: any;
+  diasfestivosService: any;
   constructor(
-    private actividadService: ActividadService,
-    private activatedRoute: ActivatedRoute,
-    private diasfestivosService: DiasFestivosService,
-    private router:Router
-  ) { }
+    private ActividadService: ActividadService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  currentEntity: Actividad =
-  {
+  currentEntity: Actividad = {
     actividadId: 0,
     nombre: "",
     categoria: 0,
     festividades:[],
     created: new Date(),
     updated: new Date(),
-    archivate:false,
-    enabled: true
+    archivate: false,
+    enabled: true,
   };
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(
-      (params) => {
-        if (params.get("id")){
-          this.findById(parseInt(params.get("id")!));
-        }
+    this.activatedRoute.paramMap.subscribe((params) => {
+      if (params.get('id')) {
+        this.findById(parseInt(params.get('id')!));
       }
-    )
+    });
   }
 
-  save():void {
+  save(): void {
     console.table(this.currentEntity);
-    this.actividadService.save(this.currentEntity)
+    this.ActividadService.save(this.currentEntity)
     .subscribe(
       () => {
         this.currentEntity =
@@ -63,12 +60,12 @@ export class ActividadFormComponent implements OnInit {
 
   findById(id: number):void {
     this.actividadService.findById(id).subscribe(
-      (response) => {
+      (response: Actividad) => {
         this.currentEntity = response;
         this.currentEntity.festividades.forEach(
           (auth) => {
             this.diasfestivosService.findById(auth.id).subscribe(
-              (item) => auth.name = item.name
+              (item: { name: any; }) => auth.name = item.name
             )
           }
         )
@@ -76,20 +73,12 @@ export class ActividadFormComponent implements OnInit {
     )
   }
 
-  deleteById():void{
-    this.actividadService.deleteById(this.currentEntity.actividadId).subscribe(
+  deleteById(): void {
+    this.ActividadService.deleteById(this.currentEntity.actividadId).subscribe(
       () => {
-        console.log("Borrado");
+        console.log('Borrado');
         //redireccionar ....
       }
-    )
-  }
-  removeAuthority(id: number):void {
-
-    this.currentEntity.festividades =
-    this.currentEntity.festividades.filter(
-      (item) => item.id != id 
     );
   }
-
 }
