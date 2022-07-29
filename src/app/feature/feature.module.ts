@@ -15,6 +15,9 @@ import { ToolbarRolesComponent } from './roles/toolbar-roles/toolbar-roles.compo
 import { ActividadFormComponent } from './actividad/form/actividad.form.component';
 import { ActividadListComponent } from './actividad/list/actividad-list.component';
 import { ActividadToolbarComponent } from './actividad/toolbar/actividad-toolbar.component';
+import { RolComboboxComponent } from './roles/rol-combobox.component';
+import { ActividadSearchComponent } from './actividad/actividad-search/actividad-search.component';
+import { CategoriaSearchComponent } from './categoria/categoria-search/categoria-search.component';
 @NgModule({
   declarations: [
     DiaFestivoFormComponent,
@@ -30,6 +33,9 @@ import { ActividadToolbarComponent } from './actividad/toolbar/actividad-toolbar
     ActividadFormComponent,
     ActividadListComponent,
     ActividadToolbarComponent,
+    RolComboboxComponent,
+    ActividadSearchComponent,
+    CategoriaSearchComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })

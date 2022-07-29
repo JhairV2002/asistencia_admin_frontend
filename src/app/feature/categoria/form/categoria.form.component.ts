@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Actividad } from '../../actividad/actividad';
+import { ActividadService } from '../../actividad/actividad.service';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
 
@@ -10,7 +12,9 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaFormComponent implements OnInit {
   constructor(
     private CategoriaService: CategoriaService,
-    private activatedRoute: ActivatedRoute
+    private actividadService: ActividadService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   currentEntity: Categoria = {
@@ -22,6 +26,8 @@ export class CategoriaFormComponent implements OnInit {
     updated: new Date(),
     enabled: true,
     archived: true,
+    rolId:0,
+    actividades: []
   };
 
   ngOnInit(): void {
@@ -44,13 +50,24 @@ export class CategoriaFormComponent implements OnInit {
         updated: new Date(),
         enabled: true,
         archived: true,
+        rolId:0,
+        actividades: []
       };
-    });
-  }
+      this.router.navigate(['/layout/categoria-list']);
+    }
+  );
+}
 
   findById(id: number): void {
     this.CategoriaService.findById(id).subscribe((response) => {
       this.currentEntity = response;
+        this.currentEntity.actividades.forEach(
+          (act) => {
+            this.actividadService.findById(act.actividadId).subscribe(
+              (item) => act.nombre = item.nombre
+            )
+          }
+        )
     });
   }
 
@@ -62,4 +79,13 @@ export class CategoriaFormComponent implements OnInit {
       //redireccionar ....
     });
   }
+
+  removeActividad(id: number):void {
+
+    this.currentEntity.actividades =
+    this.currentEntity.actividades.filter(
+      (item) => item.actividadId != id 
+    );
+  }
+
 }
