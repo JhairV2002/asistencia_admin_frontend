@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Actividad } from '../actividad';
 import { ActividadService } from '../actividad.service';
+import { DiasFestivos} from '../../diasfestivos/diasfestivos';
+import { DiasFestivos } from '../../diasfestivos/diasfestivos.service';
+
 @Component({
   selector: 'app-actividad-form',
   templateUrl: './actividad.form.component.html'
@@ -10,14 +13,17 @@ export class ActividadFormComponent implements OnInit {
 
   constructor(
     private actividadService: ActividadService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private diasfestivosService: DiasFestivosService,
+    private router:Router
   ) { }
 
   currentEntity: Actividad =
   {
     actividadId: 0,
     nombre: "",
-    categoria: "",
+    categoria: 0,
+    festividades:[],
     created: new Date(),
     updated: new Date(),
     archivate:false,
@@ -43,12 +49,14 @@ export class ActividadFormComponent implements OnInit {
         {
           actividadId: 0,
           nombre: "",
-          categoria: "",
+          categoria: 0,
+          festividades:[],
           created: new Date(),
           updated: new Date(),
           archivate:false,
           enabled: true
         };
+        this.router.navigate(['/layout/actividad-list']);
       }
     )
   }
@@ -57,6 +65,13 @@ export class ActividadFormComponent implements OnInit {
     this.actividadService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
+        this.currentEntity.festividades.forEach(
+          (auth) => {
+            this.diasfestivosService.findById(auth.id).subscribe(
+              (item) => auth.name = item.name
+            )
+          }
+        )
       }
     )
   }
@@ -68,6 +83,13 @@ export class ActividadFormComponent implements OnInit {
         //redireccionar ....
       }
     )
+  }
+  removeAuthority(id: number):void {
+
+    this.currentEntity.festividades =
+    this.currentEntity.festividades.filter(
+      (item) => item.id != id 
+    );
   }
 
 }

@@ -33,7 +33,7 @@ export class ActividadService {
     return this.http.get<Actividad[]>(this.url+"/findAll", this.httpOptions);
   }
 
-  public findByName(term: string): Observable<Actividad[]>{
+  public findByNombre(term: string): Observable<Actividad[]>{
     return this.http.get<Actividad[]>(this.url+"/findByName/"+term, this.httpOptions)
   } 
 

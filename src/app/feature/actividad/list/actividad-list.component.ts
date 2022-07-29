@@ -24,9 +24,9 @@ export class ActividadListComponent implements OnInit {
     )
   }
 
-  public findByName(term: string): void{
+  public findByNombre(term: string): void{
     if (term.length>=2){
-      this.actividadService.findByName(term).subscribe(
+      this.actividadService.findByNombre(term).subscribe(
         (response) => this.actividadList = response
       )
     }
