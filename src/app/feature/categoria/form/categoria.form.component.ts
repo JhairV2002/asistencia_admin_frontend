@@ -5,21 +5,19 @@ import { CategoriaService } from '../categoria.service';
 
 @Component({
   selector: 'app-categoria-form',
-  templateUrl: './categoria.form.component.html'
+  templateUrl: './categoria.form.component.html',
 })
 export class CategoriaFormComponent implements OnInit {
-
   constructor(
     private CategoriaService: CategoriaService,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
-  currentEntity: Categoria = 
-  {
+  currentEntity: Categoria = {
     categoriaActividadId: 0,
-    nombre: "",
-    secuencia: "",
-    color: "",
+    nombre: '',
+    secuencia: '',
+    color: '',
     created: new Date(),
     updated: new Date(),
     enabled: true,
@@ -27,50 +25,41 @@ export class CategoriaFormComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(
-      (params) => {
-        if (params.get("id")){
-          this.findById(parseInt(params.get("id")!));
-        }
+    this.activatedRoute.paramMap.subscribe((params) => {
+      if (params.get('id')) {
+        this.findById(parseInt(params.get('id')!));
       }
-    )
+    });
   }
 
-  save():void {
+  save(): void {
     console.table(this.currentEntity);
-    this.CategoriaService.save(this.currentEntity)
-    .subscribe(
-      () => {
-        this.currentEntity = 
-        {
-          categoriaActividadId: 0,
-          nombre: "",
-          secuencia: "",
-          color: "",
-          created: new Date(),
-          updated: new Date(),
-          enabled: true,
-          archived: true
-        };
-      }
-    )
+    this.CategoriaService.save(this.currentEntity).subscribe(() => {
+      this.currentEntity = {
+        categoriaActividadId: 0,
+        nombre: '',
+        secuencia: '',
+        color: '',
+        created: new Date(),
+        updated: new Date(),
+        enabled: true,
+        archived: true,
+      };
+    });
   }
 
-  findById(id: number):void {
-    this.CategoriaService.findById(id).subscribe(
-      (response) => {
-        this.currentEntity = response;
-      }
-    )
+  findById(id: number): void {
+    this.CategoriaService.findById(id).subscribe((response) => {
+      this.currentEntity = response;
+    });
   }
 
-  deleteById():void{
-    this.CategoriaService.deleteById(this.currentEntity.categoriaActividadId).subscribe(
-      () => {
-        console.log("Borrado");
-        //redireccionar ....
-      }
-    )
+  deleteById(): void {
+    this.CategoriaService.deleteById(
+      this.currentEntity.categoriaActividadId
+    ).subscribe(() => {
+      console.log('Borrado');
+      //redireccionar ....
+    });
   }
-
 }

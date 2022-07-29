@@ -6,6 +6,8 @@ import { CategoriaFormComponent } from '../feature/categoria/form/categoria.form
 import { CategoriaListComponent } from '../feature/categoria/list/categoria-list.component';
 import { RolesListComponent } from '../feature/roles/roles-list/roles-list.component';
 import { RolesComponent } from '../feature/roles/roles-form/roles.component';
+import { ActividadFormComponent } from '../feature/actividad/form/actividad.form.component';
+import { ActividadListComponent } from '../feature/actividad/list/actividad-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 
@@ -18,18 +20,11 @@ const routes: Routes = [
       { path: 'diaFestivo-form', component: DiaFestivoFormComponent },
       { path: 'diaFestivo-form/:id', component: DiaFestivoFormComponent },
       { path: 'diaFestivo-list', component: DiaFestivoListComponent },
-      { path: 'dashboard', component: DashboardComponent },
-    ],
-  },
-  {
-    path: '',
-    component: MainComponent,
-    children: [
-      { path: '', component: DashboardComponent },
       { path: 'categoria-form', component: CategoriaFormComponent },
       { path: 'categoria-form/:id', component: CategoriaFormComponent },
       { path: 'categoria-list', component: CategoriaListComponent },
       { path: 'dashboard', component: DashboardComponent },
+
       {
         path: 'roles-form',
         component: RolesComponent,
@@ -42,10 +37,9 @@ const routes: Routes = [
         path: 'roles-list',
         component: RolesListComponent,
       },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
+      { path: 'actividad-form', component: ActividadFormComponent },
+      { path: 'actividad-form/:id', component: ActividadFormComponent },
+      { path: 'actividad-list', component: ActividadListComponent },
     ],
   },
 ];

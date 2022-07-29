@@ -1,31 +1,31 @@
-<app-diaFestivo-toolbar
-  [entityName]="currentEntity.name"
-></app-diaFestivo-toolbar>
+<app-actividad-toolbar
+  [entityName]="currentEntity.nombre"
+></app-actividad-toolbar>
 <div class="grid justify-center mt-4">
   <div class="card shadow-2xl shadow-black">
     <div class="card-body">
       <div class="card-title">
-        Administración <span class="text-primary">Dias Festivos</span>
+        Administración <span class="text-primary">Actividades</span>
       </div>
       <div class="divider"></div>
       <div class="grid">
-        <label for="">Nombre de la festividad:</label>
+        <label for="">Nombre Actividad:</label>
         <input
           class="input input-primary"
           type="text"
           name=""
           id=""
-          placeholder="Ejemplo: Navidad"
-          [(ngModel)]="currentEntity.name"
+          placeholder="Ejemplo: Actividad uno"
+          [(ngModel)]="currentEntity.nombre"
         />
-        <label for="">Fecha del dia festivo:</label>
+        <label for="">Categoria</label>
         <input
           class="input input-primary"
-          type="date"
+          type="text"
           name=""
           id=""
-          placeholder="Ejemplo: 25/12/2022"
-          [(ngModel)]="currentEntity.date"
+          placeholder="Ejemplo: "
+          [(ngModel)]="currentEntity.categoria"
         />
         <div class="form-control">
           <label class="label cursor-pointer justify-start">
@@ -57,9 +57,9 @@
             <input
               type="checkbox"
               class="toggle toggle-primary"
-              [(ngModel)]="currentEntity.archived"
+              [(ngModel)]="currentEntity.archivate"
             />
-            <span class="label-text ml-2">Archivar</span>
+            <span class="label-text ml-2">Achivate</span>
           </label>
         </div>
         <label for="my-modal-6" class="btn modal-button btn-secondary btn-xs"
