@@ -1,5 +1,9 @@
+//revisar findById por si no sirve
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Actividad } from '../../actividad/actividad';
+import { ActividadService } from '../../actividad/actividad.service';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
 
@@ -10,7 +14,9 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaFormComponent implements OnInit {
   constructor(
     private CategoriaService: CategoriaService,
-    private activatedRoute: ActivatedRoute
+    private actividadService: ActividadService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   currentEntity: Categoria = {
@@ -22,6 +28,8 @@ export class CategoriaFormComponent implements OnInit {
     updated: new Date(),
     enabled: true,
     archived: true,
+    rolId: 0,
+    actividades: [],
   };
 
   ngOnInit(): void {
@@ -44,13 +52,21 @@ export class CategoriaFormComponent implements OnInit {
         updated: new Date(),
         enabled: true,
         archived: true,
+        rolId: 0,
+        actividades: [],
       };
+      this.router.navigate(['/layout/categoria-list']);
     });
   }
 
   findById(id: number): void {
-    this.CategoriaService.findById(id).subscribe((response) => {
+    this.actividadService.findById(id).subscribe((response) => {
       this.currentEntity = response;
+      this.currentEntity.actividades.forEach((acti) => {
+        this.actividadService
+          .findById(acti.actividadId)
+          .subscribe((item) => (acti.nombre = item.nombre));
+      });
     });
   }
 
@@ -61,5 +77,13 @@ export class CategoriaFormComponent implements OnInit {
       console.log('Borrado');
       //redireccionar ....
     });
+  }
+
+  removeActividad(id: number) {
+    this.currentEntity.actividades = this.currentEntity.actividades.filter(
+      (item) => {
+        item.actividadId !== id;
+      }
+    );
   }
 }

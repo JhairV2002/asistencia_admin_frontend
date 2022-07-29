@@ -24,13 +24,16 @@ export class CategoriaListComponent implements OnInit {
     )
   }
 
-  public findByNombre(term: string): void {
+  public findByNombre(term: string): void{
     if (term.length>=2){
       this.categoriaService.findByNombre(term).subscribe(
         (response) => this.categoriaList = response
       )
     }
-    
+    if (term.length===0){
+      this.findAll();
+    }
+
   }
 
 }
