@@ -2,7 +2,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Actividad } from '../../actividad/actividad';
 import { ActividadService } from '../../actividad/actividad.service';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
@@ -60,7 +59,7 @@ export class CategoriaFormComponent implements OnInit {
   }
 
   findById(id: number): void {
-    this.actividadService.findById(id).subscribe((response) => {
+    this.CategoriaService.findById(id).subscribe((response) => {
       this.currentEntity = response;
       this.currentEntity.actividades.forEach((acti) => {
         this.actividadService
