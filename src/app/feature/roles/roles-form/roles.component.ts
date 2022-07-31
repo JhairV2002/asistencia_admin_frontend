@@ -22,6 +22,7 @@ export class RolesComponent implements OnInit {
     updated: new Date(),
     enabled: false,
     archived: false,
+    categoriaActividadId: 0,
   };
 
   form: Rol = this.initialForm;
