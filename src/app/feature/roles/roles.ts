@@ -1,3 +1,5 @@
+import { Person } from '../person/person';
+
 export interface Rol {
   rolId: number;
   name: string;
@@ -7,4 +9,5 @@ export interface Rol {
   enabled: boolean;
   archived: boolean;
   categoriaActividadId: number;
+  persons: Person[];
 }

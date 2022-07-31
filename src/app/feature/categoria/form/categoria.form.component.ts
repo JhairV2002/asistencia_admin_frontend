@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
 
@@ -10,7 +10,8 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaFormComponent implements OnInit {
   constructor(
     private CategoriaService: CategoriaService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rotuer: Router
   ) {}
 
   currentEntity: Categoria = {
@@ -45,6 +46,7 @@ export class CategoriaFormComponent implements OnInit {
         enabled: true,
         archived: true,
       };
+      this.rotuer.navigate(['/layout/categoria-list']);
     });
   }
 

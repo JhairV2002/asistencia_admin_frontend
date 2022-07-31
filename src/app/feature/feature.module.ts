@@ -17,6 +17,8 @@ import { ActividadToolbarComponent } from './actividad/toolbar/actividad-toolbar
 import { PersonComponent } from './person/person-form/person.component';
 import { PersonListComponent } from './person/person-list/person-list.component';
 import { PersonToolbarComponent } from './person/person-toolbar/person-toolbar.component';
+import { CategoriaComboboxComponent } from './categoria/categoria-combobox/categoria-combobox.component';
+import { PersonSearchComponent } from './person/person-search/person-search.component';
 @NgModule({
   declarations: [
     DiaFestivoFormComponent,
@@ -34,6 +36,8 @@ import { PersonToolbarComponent } from './person/person-toolbar/person-toolbar.c
     PersonComponent,
     PersonListComponent,
     PersonToolbarComponent,
+    CategoriaComboboxComponent,
+    PersonSearchComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })
