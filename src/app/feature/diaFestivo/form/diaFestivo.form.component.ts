@@ -66,13 +66,13 @@ export class DiaFestivoFormComponent implements OnInit {
     this.diaFestivoService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
-        // this.currentEntity.categorias.forEach(
-        //   (cate) => {
-        //     this.categoriaService.findById(cate.categoriaActividadId).subscribe(
-        //       (item) => cate.nombre = item.nombre
-        //     )
-        //   }
-        // )
+        this.currentEntity.categorias.forEach(
+          (cate) => {
+            this.categoriaService.findById(cate.categoriaActividadId).subscribe(
+              (item) => cate.nombre = item.nombre
+            )
+          }
+        )
       }
     )
   }
@@ -81,6 +81,12 @@ export class DiaFestivoFormComponent implements OnInit {
     this.diaFestivoService.deleteById(this.currentEntity.dayId).subscribe(
       () => {
       }
+    )
+  }
+
+  removeCategoria(id: number) {
+    this.currentEntity.categorias = this.currentEntity.categorias.filter(
+      (item) => item.categoriaActividadId !== id
     )
   }
 
