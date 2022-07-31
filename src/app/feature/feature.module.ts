@@ -17,6 +17,7 @@ import { ActividadToolbarComponent } from './actividad/toolbar/actividad-toolbar
 import { PersonComponent } from './person/person-form/person.component';
 import { PersonListComponent } from './person/person-list/person-list.component';
 import { PersonToolbarComponent } from './person/person-toolbar/person-toolbar.component';
+import { ComboboxRolesComponent } from './diaFestivo/combobox_roles/combobox-roles.component';
 @NgModule({
   declarations: [
     DiaFestivoFormComponent,
@@ -34,6 +35,7 @@ import { PersonToolbarComponent } from './person/person-toolbar/person-toolbar.c
     PersonComponent,
     PersonListComponent,
     PersonToolbarComponent,
+    ComboboxRolesComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })
