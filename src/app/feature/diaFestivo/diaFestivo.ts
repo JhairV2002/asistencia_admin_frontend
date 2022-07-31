@@ -9,5 +9,5 @@ export interface DiaFestivo {
   archived: boolean,
   enabled: boolean,
   fkRoles: number,
-  categorias: Categoria[]
+  categorias: Categoria[],
 }
