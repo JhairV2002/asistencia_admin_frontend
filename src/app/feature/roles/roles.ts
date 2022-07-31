@@ -4,6 +4,6 @@ export interface Rol {
   admin: boolean;
   created: Date;
   updated: Date;
-  enable: boolean;
+  enabled: boolean;
   archived: boolean;
 }

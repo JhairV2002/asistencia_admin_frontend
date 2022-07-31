@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
-import { Rol } from './roles';
-import { RolesService } from './roles.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Rol } from '../roles';
+import { RolesService } from '../roles.service';
 
 @Component({
   selector: 'app-roles',
@@ -21,7 +20,7 @@ export class RolesComponent implements OnInit {
     admin: false,
     created: new Date(),
     updated: new Date(),
-    enable: false,
+    enabled: false,
     archived: false,
   };
 
@@ -39,6 +38,7 @@ export class RolesComponent implements OnInit {
     this.rolesService.save(this.form).subscribe(() => {
       this.form = this.initialForm;
     });
+    this.router.navigate(['/layout/roles-list']);
   }
 
   findById(id: number): void {

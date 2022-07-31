@@ -1,19 +1,19 @@
 <div class="">
-  <app-toolbar-roles (termEmitter)="findByName($event)"></app-toolbar-roles>
+  <app-person-toolbar (termEmitter)="findByName($event)"></app-person-toolbar>
   <div class="overflow-x-auto bg-white">
     <table class="table table-compact w-full">
       <thead>
         <tr>
           <th></th>
           <th>Nombre</th>
-          <th>Admin</th>
+          <th>Apellido</th>
           <th>Activo</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let rol of rolesList">
+        <tr *ngFor="let person of personList">
           <td>
-            <a [routerLink]="['../roles-form', rol.id]">
+            <a [routerLink]="['../person-form', person.personId]">
               <svg
                 class="h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,23 +32,15 @@
               </svg>
             </a>
           </td>
-          <td>{{ rol.name }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.lastname }}</td>
           <td>
             <input
               class="toggle toggle-primary"
               type="checkbox"
               name=""
               id=""
-              [ngModel]="rol.admin"
-            />
-          </td>
-          <td>
-            <input
-              class="toggle toggle-primary"
-              type="checkbox"
-              name=""
-              id=""
-              [ngModel]="rol.enabled"
+              [ngModel]="person.enabled"
             />
           </td>
         </tr>
