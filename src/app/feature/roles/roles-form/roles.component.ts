@@ -39,6 +39,7 @@ export class RolesComponent implements OnInit {
       this.form = this.initialForm;
       this.router.navigate(['/layout/roles-list']);
     });
+    this.router.navigate(['/layout/roles-list']);
   }
 
   findById(id: number): void {
