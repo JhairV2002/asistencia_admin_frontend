@@ -28,7 +28,7 @@
           [(ngModel)]="currentEntity.date"
         />
         <label for="">Roles: </label>
-        <app-combobox-roles></app-combobox-roles>
+        <app-combobox-roles (rolIdEmitter)="currentEntity.fkRoles=$event" [rolId]="currentEntity.fkRoles"></app-combobox-roles>
         <div class="form-control">
           <label class="label cursor-pointer justify-start">
             <input
@@ -39,6 +39,18 @@
             <span class="label-text ml-2">Activo</span>
           </label>
         </div>
+        <table class="table table-compact">
+          <thead>
+            <tr>
+              <th>Permiso</th>
+              <th>Emiminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let categoria of currentEntity.categorias">
+              <td>{{categoria.nombre}}</td>
+          </tbody>
+        </table>
       </div>
       <div class="card-actions">
         <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>
