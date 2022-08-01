@@ -23,6 +23,7 @@ import { RolComboboxComponent } from './roles/rol-combobox.component';
 import { ActividadSearchComponent } from './actividad/actividad-search/actividad-search.component';
 import { CategoriaSearchComponent } from './categoria/categoria-search/categoria-search.component';
 import { ComboboxRolesComponent } from './diaFestivo/combobox_roles/combobox-roles.component';
+import { PersonSearchComponent } from './person/person-search/person-search.component';
 @NgModule({
   declarations: [
     DiaFestivoFormComponent,
@@ -46,6 +47,7 @@ import { ComboboxRolesComponent } from './diaFestivo/combobox_roles/combobox-rol
     ActividadSearchComponent,
     CategoriaSearchComponent,
     ComboboxRolesComponent,
+    PersonSearchComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })

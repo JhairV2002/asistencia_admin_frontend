@@ -26,8 +26,8 @@ export class CategoriaFormComponent implements OnInit {
     updated: new Date(),
     enabled: true,
     archived: true,
-    rolId:0,
-    actividades: []
+    rolId: 0,
+    actividades: [],
   };
 
   ngOnInit(): void {
@@ -50,24 +50,21 @@ export class CategoriaFormComponent implements OnInit {
         updated: new Date(),
         enabled: true,
         archived: true,
-        rolId:0,
-        actividades: []
+        rolId: 0,
+        actividades: [],
       };
       this.router.navigate(['/layout/categoria-list']);
-    }
-  );
-}
+    });
+  }
 
   findById(id: number): void {
     this.CategoriaService.findById(id).subscribe((response) => {
       this.currentEntity = response;
-        this.currentEntity.actividades.forEach(
-          (act) => {
-            this.actividadService.findById(act.actividadId).subscribe(
-              (item) => act.nombre = item.nombre
-            )
-          }
-        )
+      this.currentEntity.actividades.forEach((act) => {
+        this.actividadService
+          .findById(act.actividadId)
+          .subscribe((item) => (act.nombre = item.nombre));
+      });
     });
   }
 
@@ -80,12 +77,9 @@ export class CategoriaFormComponent implements OnInit {
     });
   }
 
-  removeActividad(id: number):void {
-
-    this.currentEntity.actividades =
-    this.currentEntity.actividades.filter(
-      (item) => item.actividadId != id 
+  removeActividad(id: number): void {
+    this.currentEntity.actividades = this.currentEntity.actividades.filter(
+      (item) => item.actividadId != id
     );
   }
-
 }

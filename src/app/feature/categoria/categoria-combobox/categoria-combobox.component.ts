@@ -15,10 +15,16 @@ export class CategoriaComboboxComponent implements OnInit {
   @Output() categoriaIdEmitter = new EventEmitter<number>();
   @Input() categoriaActividadId: number = 0;
 
-  public findAll() {
+  /**
+   * findAll
+   */
+  public findAll(): void {
     this.categoriaService.findAll().subscribe((res) => (this.categorias = res));
   }
 
+  /**
+   * onSelect
+   */
   public onSelect(id: string) {
     this.categoriaIdEmitter.emit(parseInt(id));
   }

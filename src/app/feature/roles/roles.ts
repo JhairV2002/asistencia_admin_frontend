@@ -1,3 +1,5 @@
+import { Person } from '../person/person';
+
 export interface Rol {
   rolId: number;
   name: string;
@@ -6,4 +8,6 @@ export interface Rol {
   updated: Date;
   enabled: boolean;
   archived: boolean;
+  categoriaActividadId: number;
+  persons: Person[];
 }
