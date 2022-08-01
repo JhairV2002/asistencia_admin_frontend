@@ -30,7 +30,7 @@ export class CategoriaListComponent implements OnInit {
         (response) => this.categoriaList = response
       )
     }
-    
+    if (term.length === 0) this.findAll();
   }
 
 }
