@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DiaFestivoService } from '../../diaFestivo/diaFestivo.service';
 import { Actividad } from '../actividad';
 import { ActividadService } from '../actividad.service';
 @Component({
@@ -9,7 +10,9 @@ import { ActividadService } from '../actividad.service';
 export class ActividadFormComponent implements OnInit {
   constructor(
     private ActividadService: ActividadService,
-    private activatedRoute: ActivatedRoute
+    private diasFestivosService: DiaFestivoService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   currentEntity: Actividad = {
@@ -20,6 +23,8 @@ export class ActividadFormComponent implements OnInit {
     updated: new Date(),
     archivate: false,
     enabled: true,
+    categoriaActividadId: 0,
+    diasFestivos: [],
   };
 
   ngOnInit(): void {
@@ -41,14 +46,28 @@ export class ActividadFormComponent implements OnInit {
         updated: new Date(),
         archivate: false,
         enabled: true,
+        categoriaActividadId: 0,
+        diasFestivos: [],
       };
+      this.router.navigate(['/layout/actividad-list']);
     });
   }
 
   findById(id: number): void {
     this.ActividadService.findById(id).subscribe((response) => {
       this.currentEntity = response;
+      this.currentEntity.diasFestivos.forEach((element) => {
+        this.diasFestivosService
+          .findById(element.dayId)
+          .subscribe((res) => (element.name = res.name));
+      });
     });
+  }
+
+  removeDiaFestivo(id: number): void {
+    this.currentEntity.diasFestivos = this.currentEntity.diasFestivos.filter(
+      (el) => el.dayId != id
+    );
   }
 
   deleteById(): void {
