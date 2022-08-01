@@ -6,5 +6,4 @@ export interface Rol {
   updated: Date;
   enabled: boolean;
   archived: boolean;
-  categoriaActividadId: number;
 }
