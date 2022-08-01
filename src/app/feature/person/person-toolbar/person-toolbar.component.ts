@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PersonToolbarComponent implements OnInit {
   @Input() entityName: string = '';
-  @Output() termEmitter = new EventEmitter();
+  @Output() termEmitter = new EventEmitter<string>();
 
   constructor() {}
 

@@ -32,6 +32,7 @@ export class PersonComponent implements OnInit {
     });
   }
   save(): void {
+    console.log(this.form);
     this.personService.save(this.form).subscribe(() => {
       this.form = this.initialForm;
       this.router.navigate(['/layout/person-list']);

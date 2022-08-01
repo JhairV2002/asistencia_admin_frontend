@@ -39,11 +39,10 @@ export class RolesComponent implements OnInit {
   }
 
   save(): void {
+    console.log(this.form);
     this.rolesService.save(this.form).subscribe(() => {
-      this.form = this.initialForm;
       this.router.navigate(['/layout/roles-list']);
     });
-    this.router.navigate(['/layout/roles-list']);
   }
 
   findById(id: number): void {
