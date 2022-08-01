@@ -76,6 +76,13 @@
                   </g>
                 </svg>
               </td>
+            </tr>
+                <tr>
+                  <td>
+                    <app-categoria-search (categoriaEmitter)="this.currentEntity.categorias.push($event)" ></app-categoria-search>
+                  </td>
+                  <td></td>
+                </tr>
           </tbody>
         </table>
       </div>
