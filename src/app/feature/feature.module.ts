@@ -19,6 +19,9 @@ import { PersonListComponent } from './person/person-list/person-list.component'
 import { PersonToolbarComponent } from './person/person-toolbar/person-toolbar.component';
 import { CategoriaComboboxComponent } from './categoria/categoria-combobox/categoria-combobox.component';
 import { DiaFestivoSearchComponent } from './diaFestivo/dia-festivo-search/dia-festivo-search.component';
+import { RolComboboxComponent } from './roles/rol-combobox.component';
+import { ActividadSearchComponent } from './actividad/actividad-search/actividad-search.component';
+import { CategoriaSearchComponent } from './categoria/categoria-search/categoria-search.component';
 @NgModule({
   declarations: [
     DiaFestivoFormComponent,
@@ -38,6 +41,9 @@ import { DiaFestivoSearchComponent } from './diaFestivo/dia-festivo-search/dia-f
     PersonToolbarComponent,
     CategoriaComboboxComponent,
     DiaFestivoSearchComponent,
+    RolComboboxComponent,
+    ActividadSearchComponent,
+    CategoriaSearchComponent,
   ],
   imports: [CommonModule, FeatureRoutingModule, FormsModule],
 })

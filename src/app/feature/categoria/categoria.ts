@@ -1,3 +1,5 @@
+import { Actividad } from '../actividad/actividad';
+
 export interface Categoria {
   categoriaActividadId: number;
   nombre: string;
@@ -7,4 +9,6 @@ export interface Categoria {
   updated: Date;
   enabled: boolean;
   archived: boolean;
+  rolId: number;
+  actividades: Actividad[];
 }
