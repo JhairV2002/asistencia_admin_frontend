@@ -17,7 +17,7 @@ export class RolesListComponent implements OnInit {
 
   public findAll(): void {
     this.rolesService.findAll().subscribe((res) => {
-      this.rolesList = res;
+      this.rolesList = res.filter(el => !el.archived);
       console.log(res);
     });
   }
