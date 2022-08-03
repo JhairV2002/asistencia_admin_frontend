@@ -25,7 +25,7 @@ export class CategoriaFormComponent implements OnInit {
     created: new Date(),
     updated: new Date(),
     enabled: true,
-    archived: true,
+    archived: false,
     rolId: 0,
     actividades: [],
   };

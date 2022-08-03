@@ -20,8 +20,7 @@ export class CategoriaListComponent implements OnInit {
 
   public findAll():void {
     this.categoriaService.findAll().subscribe(
-      (response) => this.categoriaList = response
-    )
+      (response) => this.categoriaList = response.filter(el=> !el.archived));
   }
 
   public findByNombre(term: string): void {
