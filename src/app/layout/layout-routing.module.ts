@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DiaFestivoFormComponent } from '../feature/diaFestivo/form/diaFestivo.form.component';
-import { DiaFestivoListComponent } from '../feature/diaFestivo/list/diaFestivo-list.component';
-import { CategoriaFormComponent } from '../feature/categoria/form/categoria.form.component';
-import { CategoriaListComponent } from '../feature/categoria/list/categoria-list.component';
-import { ActividadFormComponent } from '../feature/actividad/form/actividad.form.component';
-import { ActividadListComponent } from '../feature/actividad/list/actividad-list.component';
+import { DiaFestivoFormComponent } from '../feature/holyday/form/diaFestivo.form.component';
+import { DiaFestivoListComponent } from '../feature/holyday/list/diaFestivo-list.component';
+import { CategoriaFormComponent } from '../feature/category/form/categoria.form.component';
+import { CategoriaListComponent } from '../feature/category/list/categoria-list.component';
+import { ActividadFormComponent } from '../feature/activity/form/actividad.form.component';
+import { ActividadListComponent } from '../feature/activity/list/actividad-list.component';
 import { PersonComponent } from '../feature/person/person-form/person.component';
 import { PersonListComponent } from '../feature/person/person-list/person-list.component';
-import { RolesListComponent } from '../feature/roles/roles-list/roles-list.component';
-import { RolesComponent } from '../feature/roles/roles-form/roles.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
+import { RolesComponent } from '../feature/role/role-form/roles.component';
+import { RolesListComponent } from '../feature/role/role-list/roles-list.component';
 
 const routes: Routes = [
   {

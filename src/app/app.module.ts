@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { RolesComponent } from './feature/roles/roles-form/roles.component';
 
 @NgModule({
   declarations: [AppComponent],
