@@ -1,4 +1,4 @@
-import { Categoria } from "../categoria/categoria";
+import { Categoria } from "../category/categoria";
 
 export interface DiaFestivo {
   dayId: number,

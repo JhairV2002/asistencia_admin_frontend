@@ -5,7 +5,6 @@ import { CategoriaService } from '../categoria.service';
 @Component({
   selector: 'app-categoria-combobox',
   templateUrl: './categoria-combobox.component.html',
-  styleUrls: ['./categoria-combobox.component.css'],
 })
 export class CategoriaComboboxComponent implements OnInit {
   constructor(private categoriaService: CategoriaService) {}

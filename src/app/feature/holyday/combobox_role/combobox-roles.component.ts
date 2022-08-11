@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { RolesService } from '../../roles/roles.service';
-import { Rol } from '../../roles/roles';
+import { RolesService } from '../../role/roles.service';
+import { Rol } from '../../role/roles';
 
 @Component({
   selector: 'app-combobox-roles',

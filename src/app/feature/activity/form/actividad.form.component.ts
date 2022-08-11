@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DiaFestivoService } from '../../diaFestivo/diaFestivo.service';
+import { DiaFestivoService } from '../../holyday/diaFestivo.service';
 import { Actividad } from '../actividad';
 import { ActividadService } from '../actividad.service';
 @Component({

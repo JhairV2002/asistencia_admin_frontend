@@ -1,4 +1,4 @@
-import { Actividad } from '../actividad/actividad';
+import { Actividad } from '../activity/actividad';
 
 export interface Categoria {
   categoriaActividadId: number;

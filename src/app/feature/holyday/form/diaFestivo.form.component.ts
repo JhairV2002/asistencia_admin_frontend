@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoriaService } from '../../categoria/categoria.service';
+import { CategoriaService } from '../../category/categoria.service';
 import { DiaFestivo } from '../diaFestivo';
 import { DiaFestivoService } from '../diaFestivo.service';
 

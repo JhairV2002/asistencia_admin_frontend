@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Actividad } from '../../actividad/actividad';
-import { ActividadService } from '../../actividad/actividad.service';
+import { Actividad } from '../../activity/actividad';
+import { ActividadService } from '../../activity/actividad.service';
 import { Categoria } from '../categoria';
 import { CategoriaService } from '../categoria.service';
 

@@ -5,7 +5,6 @@ import { DiaFestivoService } from '../diaFestivo.service';
 @Component({
   selector: 'app-dia-festivo-search',
   templateUrl: './dia-festivo-search.component.html',
-  styleUrls: ['./dia-festivo-search.component.css'],
 })
 export class DiaFestivoSearchComponent implements OnInit {
   constructor(private diasFestivosService: DiaFestivoService) {}

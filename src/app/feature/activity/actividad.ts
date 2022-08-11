@@ -1,4 +1,4 @@
-import { DiaFestivo } from '../diaFestivo/diaFestivo';
+import { DiaFestivo } from '../holyday/diaFestivo';
 
 export interface Actividad {
   actividadId: number;
